@@ -1,10 +1,9 @@
 name: stock-bot
 
 on:
-  push:
-  # schedule:
-  #   - cron: '0 6 * * 1-5' # Runs at 15:00 JST on weekdays
-  #   - cron: '0 20 * * 0-4' # Runs at 5:00 JST on weekdays
+  schedule:
+    - cron: '0 6 * * 1-5' # Runs at 15:00 JST on weekdays
+    - cron: '0 20 * * 0-4' # Runs at 5:00 JST on weekdays
 
 jobs:
   build:
