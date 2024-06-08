@@ -1,0 +1,31 @@
+name: Run scripts
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Run at 15:00 JST
+    - cron: '0 20 * * *' # Run at 5:00 JST
+
+jobs:
+  run-japan-stock:
+    runs-on: ubuntu-latest
+    if: github.event.schedule == '0 6 * * *'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Run japan-stock.py
+        run: python japan-stock.py
+
+  run-america-stock:
+    runs-on: ubuntu-latest
+    if: github.event.schedule == '0 20 * * *'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Run america-stock.py
+        run: python america-stock.py
