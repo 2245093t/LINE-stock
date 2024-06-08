@@ -2,7 +2,7 @@ name: Run scripts
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # Run at 15:00 JST
+    - cron: '0 6 * * *'
     - cron: '0 20 * * *' # Run at 5:00 JST
 
 jobs:
