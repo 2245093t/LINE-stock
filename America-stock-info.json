@@ -1,0 +1,22 @@
+[
+    {
+        "code" : "NVDA",
+        "name" : "Nvidia"
+    },
+    {
+        "code" : "AAPL",
+        "name" : "Apple"
+    },
+    {
+        "code" : "META",
+        "name" : "Meta"
+    },
+    {
+        "code" : "GOOGL",
+        "name" : "Google"
+    },
+    {
+        "code" : "KO",
+        "name" : "Coca Cola"
+    }
+]
