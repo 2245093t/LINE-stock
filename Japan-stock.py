@@ -20,7 +20,7 @@ for stock in stock_info:
     ticker = yf.Ticker(stock_code + ".T")
     stock["stock_price"] = ticker.history(period="1d")["Close"][0]
     stock["stock_high"] = ticker.history(period="1d")["High"][0]
-    stock["stock_price_yesterday"] = ticker.history(period="2d")["Close"][0]
+    stock["stock_price_yesterday"] = ticker.history(period="5d")["Close"][0]
     stock["stock_price_last_month"] = ticker.history(period="1mo")["Close"][0]
 
     stock["from_previous_day"] = round((stock["stock_price"] - stock["stock_price_yesterday"]) / stock["stock_price_yesterday"] * 100, 2)
