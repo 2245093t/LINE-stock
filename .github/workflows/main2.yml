@@ -1,9 +1,10 @@
 name: stock-bot
 
 on:
-  schedule:
-    - cron: '0 6 * * 1-5' # Runs at 15:00 JST on weekdays
-    - cron: '0 20 * * 1-5' # Runs at 5:00 JST on weekdays
+  push:
+  # schedule:
+  #   - cron: '0 6 * * 1-5' # Runs at 15:00 JST on weekdays
+  #   - cron: '0 20 * * 1-5' # Runs at 5:00 JST on weekdays
 
 jobs:
   build:
@@ -21,8 +22,8 @@ jobs:
           pip install line-bot-sdk
           pip install yfinance
       - name: Run Japan-stock.py
-        if: github.event.schedule == '0 6 * * 1-5'
+        # if: github.event.schedule == '0 6 * * 1-5'
         run: python Japan-stock.py
       - name: Run America-stock.py
-        if: github.event.schedule == '0 20 * * 0-4'
+        # if: github.event.schedule == '0 20 * * 0-4'
         run: python America-stock.py
